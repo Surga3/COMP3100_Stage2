@@ -1,83 +1,77 @@
 public class Server {
-    private String type;
-    private int serverID;
-    private String state;
-    private int curStartTime;
-    private int core;
-    private int mem;
-    private int disk;
+    public String type;
+    public int serverID;
+    public String state;
+    public int curStartTime;
+    public int core;
+    public int mem;
+    public int diskSpace;
 
-    public Server(String type, int id, String state, int curStartTime, int coreCount, int mem, int disk) {
+    public Server(String type, int id, int curStartTime, String state, int coreCount, int mem, int diskSpace) {
         setServerType(type);
         setServerServerID(id);
         setServerState(state);
         setServerCurStartTime(curStartTime);
         setServerCoreCount(coreCount);
         setServerMemory(mem);
-        setServerDisk(disk);
+        setServerDisk(diskSpace);
     }
 
-    public void setServerType(String type) { // setter method for server type
+    // Setter methods
+    public void setServerType(String type) {
         this.type = type;
     }
 
-    public void setServerServerID(int id) { // setter method for serverID
+    public void setServerServerID(int id) {
         this.serverID = id;
     }
 
-    public void setServerState(String state) { // setter method for server state
+    public void setServerState(String state) {
         this.state = state;
     }
 
-    public void setServerCurStartTime(int curStartTime) { // setter method for current start time
+    public void setServerCurStartTime(int curStartTime) {
         this.curStartTime = curStartTime;
     }
 
-    public void setServerCoreCount(int coreCount) { // setter method for core
+    public void setServerCoreCount(int coreCount) {
         this.core = coreCount;
     }
 
-    public void setServerMemory(int mem) { // setter method for memory
+    public void setServerMemory(int mem) {
         this.mem = mem;
     }
 
-    public void setServerDisk(int disk) { // setter method for disk
-        this.disk = disk;
+    public void setServerDisk(int diskSpace) {
+        this.diskSpace = diskSpace;
     }
 
-    public String getServerType() { // getter method for server type
+    // Getter methods
+    public String getServerType() {
         return this.type;
     }
 
-    public int getServerServerID() { // getter method for serverID
+    public int getServerServerID() {
         return this.serverID;
     }
 
-    public String getServerState() { // getter method for server stae
+    public String getServerState() {
         return this.state;
     }
 
-    public int getServerCurStartTime() { // getter method for current start time
+    public int getServerCurStartTime() {
         return this.curStartTime;
     }
 
-    public int getServerCoreCount() { // getter method for server core count
+    public int getServerCoreCount() {
         return this.core;
     }
 
-    public int getServerMemory() { // getter method for server memory
+    public int getServerMemory() {
         return this.mem;
     }
 
-    public int getServerDisk() { // getter method for server disk
-        return this.disk;
+    public int getServerDisk() {
+        return this.diskSpace;
     }
-
-    public int compareTo(Server c) { // compare function used in the sorting of the servers
-        if (this.core - c.core == 0) {
-            return c.type.compareTo(this.type);
-        }
-        return this.core - c.core;
-    }
-
 }
