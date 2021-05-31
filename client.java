@@ -77,8 +77,6 @@ public class client {
     private static String[] handleGetCapable(final String coreCount, final String memory, final String disk,
             final DataInputStream din, final DataOutputStream dout) throws IOException {
 
-        String sId, Stype, type, curStartTime;
-        int serverID, state, currStartTime, core, mem, diskSpace;
         String[] ans = new String[2];
 
         final String getCapable = "GETS Capable" + coreCount + memory + disk;
@@ -99,7 +97,7 @@ public class client {
         // Assignment of data gathered from server reply to custom server list.
         for (String server : array) {
             String[] indiServer = server.split(" ");
-            Server tempIndividualServer = new Server(type, serverID, state, curStartTime, core, mem, diskSpace);
+            Server tempIndividualServer = new Server();
             tempIndividualServer.setServerType(indiServer[0]);
             tempIndividualServer.setServerServerID(Integer.parseInt(indiServer[1]));
             tempIndividualServer.setServerState(indiServer[2]);

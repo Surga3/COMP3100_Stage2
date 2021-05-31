@@ -7,14 +7,8 @@ public class Server {
     public int mem;
     public int diskSpace;
 
-    public Server(String type, int id, int curStartTime, String state, int coreCount, int mem, int diskSpace) {
-        setServerType(type);
-        setServerServerID(id);
-        setServerState(state);
-        setServerCurStartTime(curStartTime);
-        setServerCoreCount(coreCount);
-        setServerMemory(mem);
-        setServerDisk(diskSpace);
+    public Server() {
+
     }
 
     // Setter methods
